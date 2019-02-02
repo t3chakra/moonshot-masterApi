@@ -24,6 +24,6 @@ artifacts:
   files:
     - server.js
     - routes.js
-    - controller.js
+    - newsApi.js
     - package.json
     - node_modules/*

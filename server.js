@@ -4,7 +4,7 @@ const routes = require('./routes')
 const newsApi = require('./newsApi')
 const sportsApi = require('./sportsApi')
 const radioApi = require('./radioApi')
-const musicApi = require('./musicApi')
+const musicApi = require('./cbcmusicApi')
 
 const app = express()
 const port = process.env.PORT || 3000

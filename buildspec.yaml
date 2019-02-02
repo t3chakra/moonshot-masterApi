@@ -25,5 +25,8 @@ artifacts:
     - server.js
     - routes.js
     - newsApi.js
+    - sportsApi.js
+    - musicApi.js
+    - radioApi.js
     - package.json
     - node_modules/*

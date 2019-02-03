@@ -9,7 +9,6 @@ const getLive = langPrefix => {
   })
 }
 
-
 module.exports = {
   getLive
 }

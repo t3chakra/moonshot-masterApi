@@ -5,6 +5,7 @@ const newsApi = require('./newsApi')
 const sportsApi = require('./sportsApi')
 const radioApi = require('./radioApi')
 const musicApi = require('./cbcmusicApi')
+const podcastsApi = require('./podcastsApi')
 
 const app = express()
 const port = process.env.PORT || 3000
@@ -24,9 +25,10 @@ const intentToClient = {
   "news-top-stories": newsApi.getTopStories,
   "news-international": newsApi.getInternationalNews,
   "news-local": newsApi.getLocalNews,
-  "sports-top-stories":sportsApi.getTopStories,
-  "radio-live":radioApi.getLive,
-  "music-live":musicApi.getLive
+  "sports-top-stories": sportsApi.getTopStories,
+  "radio-live": radioApi.getLive,
+  "music-live": musicApi.getLive,
+  "podcasts": podcastApi.getPodcasts
 }
 
 app.get('/', (req, res) => res.send('This is moonshot master api '))
@@ -50,7 +52,7 @@ app.post('/post', (req, res) => {
   .then(intentObj => {
     const client = intentToClient[intentObj.intent]
     console.log("Intent is ", intentObj.intent)
-    
+
     return client(userLanguage)
       .then(data => res.send(data))
       .catch(err => res.send({error:"Api client error"}))

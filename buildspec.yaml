@@ -28,5 +28,6 @@ artifacts:
     - cbcmusicApi.js
     - sportsApi.js
     - radioApi.js
+    - podcastsApi.js
     - package.json
     - node_modules/*

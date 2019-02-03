@@ -28,7 +28,7 @@ const intentToClient = {
   "sports-top-stories": sportsApi.getTopStories,
   "radio-live": radioApi.getLive,
   "music-live": musicApi.getLive,
-  "podcasts": podcastApi.getPodcasts
+  "podcasts": podcastsApi.getPodcasts
 }
 
 app.get('/', (req, res) => res.send('This is moonshot master api '))

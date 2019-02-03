@@ -47,15 +47,15 @@ app.post('/post', (req, res) => {
     body: requestBody,
     json: true
   })
- 
   .then(intentObj => {
     const client = intentToClient[intentObj.intent]
     console.log("Intent is ", intentObj.intent)
+    
     return client(userLanguage)
+      .then(data => res.send(data))
+      .catch(err => res.send({error:"Api client error"}))
   })
-
-  .then(data => res.send(data))
-  console.log("I am sending to UI ", data)
+  .catch(err => res.send({error:"NLU client error"}))
 
 })
 
